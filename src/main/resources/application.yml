@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: auth
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/security
+    username: root # Encryption required
+    password: q1w2e3r4! # Encryption required
+
+mybatis:
+  type-aliases-package: com.spring.auth.domain
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mapper/*.xml  # 추가해줘야 Invalid bound statement~ 오류 발생안함
+
+logging:
+  level:
+    org:
+      springframework:
+        security: INFO
+
